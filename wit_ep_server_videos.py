@@ -1,6 +1,6 @@
 from playwright.async_api import async_playwright
 import base64
-import asyncio
+
 
 async def get_urls_from_witanime_episode_page(page_url):
     async with async_playwright() as p:
@@ -29,9 +29,4 @@ async def get_urls_from_witanime_episode_page(page_url):
         await browser.close()
         return processed_urls
 
-async def main():
-    page_url = 'https://witanime.cyou/episode/isekai-yururi-kikou-kosodateshinagara-boukensha-shimasu-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-5/'
-    processed_urls = await get_urls_from_witanime_episode_page(page_url)
-    print('Processed URLs:', processed_urls)
 
-asyncio.run(main())
